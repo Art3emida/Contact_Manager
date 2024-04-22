@@ -1,0 +1,45 @@
+﻿@model List<Employee>
+
+<h1>Upload CSV</h1>
+<div class="mb-3 mt-3">
+    <form asp-action="UploadCsv" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="file" name="file" class="form-control"/>
+        </div>
+        <div class="mb-3"></div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-upload"></i> Upload</button>
+    </form>
+</div>
+
+<hr>
+
+<h1>Employee List</h1>
+<table id="employeeTable" class="table table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th data-column="Name">Name</th>
+            <th data-column="DateOfBirth">Date of Birth</th>
+            <th data-column="Married">Married</th>
+            <th data-column="Phone">Phone</th>
+            <th data-column="Salary">Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.Name</td>
+                <td>@obj.DateOfBirth</td>
+                <td>@obj.Married</td>
+                <td>@obj.Phone</td>
+                <td>@obj.Salary</td>
+                <td>
+                    <button class="btn p-0 delete-record-btn text-danger" type="button"><i class="bi bi-trash"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
