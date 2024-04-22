@@ -1,3 +1,3 @@
 # Contact_Manager
 
-![](Contact_Manager/preview.jpg)
+![](preview.jpg)
