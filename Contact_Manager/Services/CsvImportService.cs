@@ -36,7 +36,7 @@ namespace Contact_Manager.Services
             return records;
         }
 
-        public string DetectDelimiterForFile(IFormFile file)
+        private string DetectDelimiterForFile(IFormFile file)
         {
             string filePath = Path.GetTempFileName();
             using (var stream = new FileStream(filePath, FileMode.Create))
